@@ -38,12 +38,13 @@ def main():
     
     # total entries
     total_entries = len(df)
-    
+
     # Info
-    st.title('Frequency of Topics')
+    st.title('VRT Breaking News')
+    st.title('Topic Distribution')
     st.write(f"Since: {oldest_date_str}")
     st.write(f"Last Update: {last_update}")
-    st.write(f"Total Entries: {total_entries}")
+    st.write(f"Total Entries: {total_entries}")  
     
     # Bar chart 
     fig, ax = plt.subplots()
@@ -51,7 +52,6 @@ def main():
     ax.set_xlabel('Topic')
     ax.set_ylabel('Frequency')
     ax.set_title('Frequency of Topics')
-
     plt.xticks(rotation=90)
     
     # graph streamlit

@@ -4,7 +4,10 @@ import subprocess
 import datetime
 import time
 
-def first_job():
+third_job_executed = False #adding flag to run streamlit only once
+streamlit_process = None  #to follow up the Streamlit process
+
+def first_job(): 
     print("Pulling news...")
     try:
         subprocess.run(["python", "reporter.py"], check=True)
@@ -16,9 +19,25 @@ def second_job():
     print("Updating database...")
     try:
         subprocess.run(["python", "db_update.py"], check=True)
-        print(f"Database updated successfully at {datetime.datetime.now()}")
+        print(f"Database updated successfully at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+        global third_job_executed
+        if not third_job_executed:
+            third_job()
+            third_job_executed = True  # preventing streamlit from running again
     except subprocess.CalledProcessError:
         print("Error in database update!")
+
+def third_job():
+    print("Launching Streamlit app...")
+    global streamlit_process
+    try:
+        # launching streamlit
+        streamlit_process = subprocess.Popen(["streamlit", "run", "streamlitapp.py"]) 
+        print("Streamlit app launched successfully.")
+    except Exception as e:
+        print(f"Error launching Streamlit app!: {e}")    
+
 
 def job_listener(event):
     if event.exception:
@@ -42,3 +61,7 @@ try:
 except (KeyboardInterrupt, SystemExit):
     print("Shutting down the scheduler...")
     scheduler.shutdown()
+    if streamlit_process:
+        streamlit_process.terminate()
+        streamlit_process.wait()  # make sure the process is completed
+        print("Streamlit app stopped.")
