@@ -3,6 +3,8 @@ import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
+import pytz
+import time
 
 # connect to the db
 def get_data_from_db():
@@ -25,22 +27,23 @@ def main():
     topic_counts = get_topic_counts(df)
 
     #since
+    local_tz = datetime.datetime.now().astimezone().tzinfo
+
     df['date'] = pd.to_datetime(df['date'])
-    oldest_date = df['date'].min()
+    oldest_date = df['date'].min().astimezone(local_tz)
     oldest_date_str = oldest_date.to_pydatetime().strftime('%Y-%m-%d %H:%M')
     
     # latest update
-    last_updated = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+    last_update =  datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
     
     # total entries
     total_entries = len(df)
     
     # Info
-    st.title('Frequency of Themes')
+    st.title('Frequency of Topics')
     st.write(f"Since: {oldest_date_str}")
-    st.write(f"Last Updated: {last_updated}")
+    st.write(f"Last Update: {last_update}")
     st.write(f"Total Entries: {total_entries}")
-    
     
     # Bar chart 
     fig, ax = plt.subplots()
@@ -54,6 +57,10 @@ def main():
     # graph streamlit
     st.pyplot(fig)
     
-# run the app
-if __name__ == "__main__":
-    main()
+    #refreshing the page every 30 min
+    while True:
+        time.sleep(1 * 60 * 30) 
+        st.rerun()
+    
+# run the app 
+main()

@@ -30,7 +30,7 @@ print ("Starting the scheduler...")
 
 scheduler = BackgroundScheduler()
 # First job to run every 30 minutes
-scheduler.add_job(first_job, 'interval', minutes=30, id='first_job')
+scheduler.add_job(first_job, 'interval', minutes=30, id='first_job', next_run_time=datetime.datetime.now())
 # Listener to handle job events
 scheduler.add_listener(job_listener, EVENT_JOB_EXECUTED | EVENT_JOB_ERROR)
 

@@ -36,7 +36,7 @@ def json_to_db(file_name="latest_news.json"):
     #insert news into database
     cursor.executemany('''
     INSERT INTO news (url, topic, title, date)
-    VALUES (:url, :topic, :title, :date)
+    VALUES (?, ?, ?, ?)
                        ''',[(elem['link'], elem['topic'], elem['title'], elem['date']) for elem in news_list])
     
     conn.commit()
