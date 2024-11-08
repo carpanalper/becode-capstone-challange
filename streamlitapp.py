@@ -40,17 +40,17 @@ def main():
     total_entries = len(df)
 
     # Info
-    st.title('VRT Breaking News')
-    st.title('Topic Distribution')
+    st.subheader('VRT Breaking News Topic Distribution')
+    st.write(f"Total Entries: {total_entries}")
     st.write(f"Since: {oldest_date_str}")
     st.write(f"Last Update: {last_update}")
-    st.write(f"Total Entries: {total_entries}")  
+      
     
     # Bar chart 
     fig, ax = plt.subplots()
     ax.bar(topic_counts.index, topic_counts.values)
     ax.set_xlabel('Topic')
-    ax.set_ylabel('Frequency')
+    ax.set_ylabel('No of News')
     ax.set_title('Frequency of Topics')
     plt.xticks(rotation=90)
     

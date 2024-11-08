@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+apscheduler
+streamlit
+pandas
+matplotlib
+pytz
