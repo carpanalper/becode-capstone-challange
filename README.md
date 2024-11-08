@@ -30,11 +30,11 @@ The program will automatically pull the breaking news titles, add the new titles
 
 ## Features
 - `reporter.py` scraps url,topic,title and date info of all the available breaking news from `https://www.vrt.be/vrtnws/nl/net-binnen/` by using `beautifulsoup`
-- then archives scraped data into the `news.json` file by cheking the uniqeness based on their url. also creates `latest_news.json` file which is updated with only the new entries on each run with the above-mentioned webpage. finally informs user about the total number of archived entries and the number of new entries.
+- then archives scraped data into the `news.json` file by checking the uniqueness based on their url. also creates `latest_news.json` file which is updated with only the new entries on each run with the above-mentioned webpage. finally informs user about the total number of archived entries and the number of new entries.
 - `db_update.py` builds a database to store scraped data by using the url as a primary key. then updates the database with the `latest_news.json`  
 - `streamlitapp.py` reads data from the database and creates a bar chart showing the most frequent 10 topics of all the entries stored in the database so far. Informs the user about the total number of entries, the date of the earliest entry in the database and latest update time of the chart using `pandas` and `matplotlib`
-- It is notable that all these date and times are all shown in the local time zone of the user. Secondly the page is automatically refresh every 30 min to show most updated analysis.
-- Finally, the crucial player for automation is `scheduler.py` which orchestrates and schedules all above-mentioned scripts. It enables pulling data and updating database every 30 minutes. It informs the user about the process on each turn. It also launches streamlit app once and stops when the process is terminated. 
+- It is notable that all these dates and times are all shown in the local time zone of the user. Secondly the page is automatically refresh every 30 min to show most updated analysis.
+- Finally, the crucial player for automation is `scheduler.py` which orchestrates and schedules all above-mentioned scripts by using `apscheduler`. It enables pulling data and updating database every 30 minutes. It informs the user about the process on each turn. It also launches streamlit app once and stops when the process is terminated. 
 
 ## Future Improvements  
 - Necassary configurations for running the app on a cloud
