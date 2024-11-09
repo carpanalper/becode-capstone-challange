@@ -14,6 +14,18 @@ def get_data_from_db():
     conn.close()
     return df
 
+# getting the news from last 24 hours
+def get_daily_news():
+    conn = sqlite3.connect("news.db")
+    query = '''
+            SELECT * 
+            FROM news
+            WHERE date >= datetime('now', '-1 day');
+            '''
+    df = pd.read_sql(query,conn)
+    conn.close()
+    return df
+
 # thema frequency
 def get_topic_counts(df):
     return df['topic'].value_counts().head(10)
@@ -44,14 +56,29 @@ def main():
     st.write(f"Total Entries: {total_entries}")
     st.write(f"Since: {oldest_date_str}")
     st.write(f"Last Update: {last_update}")
+
+    #daily top 10
+    daily_news = get_daily_news()
+    daily_top_10 = daily_news['topic'].value_counts().head(10)
+
+    # Daily Bar chart
+    fig, ax = plt.subplots()
+    ax.bar(daily_top_10.index, daily_top_10.values)
+    ax.set_xlabel('Topic')
+    ax.set_ylabel('No of News')
+    ax.set_title('Frequency of Topics (Last Day)')
+    plt.xticks(rotation=90)
+
+    st.write(f"News of the Last Day:{len(daily_news)}")
+    st.pyplot(fig)
       
     
-    # Bar chart 
+    # All time Bar chart 
     fig, ax = plt.subplots()
     ax.bar(topic_counts.index, topic_counts.values)
     ax.set_xlabel('Topic')
     ax.set_ylabel('No of News')
-    ax.set_title('Frequency of Topics')
+    ax.set_title('Frequency of Topics (All Time)')
     plt.xticks(rotation=90)
     
     # graph streamlit
