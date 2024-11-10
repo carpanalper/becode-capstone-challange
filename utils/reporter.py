@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import json
+import os
 
-news_json = 'news.json'
-latest_news_json = 'latest_news.json'
+news_json = os.path.join(os.path.dirname(__file__), '..', 'data', 'news.json')
+latest_news_json = os.path.join(os.path.dirname(__file__), '..', 'data', 'latest_news.json')
 
 def append_to_json(new_data):
     try:

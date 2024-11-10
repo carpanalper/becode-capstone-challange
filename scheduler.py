@@ -3,6 +3,7 @@ from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 import subprocess
 import datetime
 import time
+import os
 
 third_job_executed = False #adding flag to run streamlit only once
 streamlit_process = None  #to follow up the Streamlit process
@@ -10,7 +11,8 @@ streamlit_process = None  #to follow up the Streamlit process
 def first_job(): 
     print("Pulling news...")
     try:
-        subprocess.run(["python", "reporter.py"], check=True)
+        reporter_path = os.path.join(os.path.dirname(__file__), 'utils', 'reporter.py')
+        subprocess.run(["python", reporter_path], check=True)
         print("News delivered successfully.")
     except subprocess.CalledProcessError:
         print("Error in delivering news!")
@@ -18,7 +20,8 @@ def first_job():
 def second_job():
     print("Updating database...")
     try:
-        subprocess.run(["python", "db_update.py"], check=True)
+        update_path = os.path.join(os.path.dirname(__file__), 'utils', 'db_update.py')
+        subprocess.run(["python", update_path], check=True)
         print(f"Database updated successfully at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
         global third_job_executed
@@ -33,7 +36,8 @@ def third_job():
     global streamlit_process
     try:
         # launching streamlit
-        streamlit_process = subprocess.Popen(["streamlit", "run", "streamlitapp.py"]) 
+        streamlit_path = os.path.join(os.path.dirname(__file__), 'utils', 'streamlitapp.py')
+        streamlit_process = subprocess.Popen(["streamlit", "run", streamlit_path]) 
         print("Streamlit app launched successfully.")
     except Exception as e:
         print(f"Error launching Streamlit app!: {e}")    

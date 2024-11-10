@@ -5,10 +5,13 @@ import matplotlib.pyplot as plt
 import datetime
 import pytz
 import time
+import os
+
+db_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'news.db')
 
 # connect to the db
 def get_data_from_db():
-    conn = sqlite3.connect('news.db')  
+    conn = sqlite3.connect(db_path)  
     query = "SELECT * FROM news"  
     df = pd.read_sql(query, conn)
     conn.close()
@@ -16,7 +19,7 @@ def get_data_from_db():
 
 # getting the news from last 24 hours
 def get_daily_news():
-    conn = sqlite3.connect("news.db")
+    conn = sqlite3.connect(db_path)
     query = '''
             SELECT * 
             FROM news
@@ -68,10 +71,10 @@ def main():
         ax.bar(daily_top_10.index, daily_top_10.values)
         ax.set_xlabel('Topic')
         ax.set_ylabel('No of News')
-        ax.set_title('Frequency of Topics (Last Day)')
+        ax.set_title('Frequency of Topics (Last 24 hours)')
         plt.xticks(rotation=90)
         #show chart
-        st.write(f"News of the Last Day:{len(daily_news)}")
+        st.write(f"Last 24 hours: {len(daily_news)} Entries")
         st.pyplot(fig)
       
     with col2:

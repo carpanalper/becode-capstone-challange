@@ -1,8 +1,11 @@
 import sqlite3
 import json
+import os
+
+db_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'news.db')
 
 def database_connection():
-    conn = sqlite3.connect('news.db')
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS news 
@@ -26,8 +29,10 @@ def database_count():
     return count
 
 def json_to_db(file_name="latest_news.json"):
+    #file path
+    file_path = os.path.join(os.path.dirname(__file__), '..', 'data', file_name)
     #read json file
-    with open(file_name, 'r') as f:
+    with open(file_path, 'r') as f:
         news_list = json.load(f)
     
     #connect to database
