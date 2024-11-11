@@ -6,6 +6,7 @@ import datetime
 import pytz
 import time
 import os
+from functions import publish_time_statistics 
 
 db_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'news.db')
 
@@ -25,9 +26,9 @@ def get_daily_news():
             FROM news
             WHERE date >= datetime('now', '-1 day');
             '''
-    df = pd.read_sql(query,conn)
+    daily_df = pd.read_sql(query,conn)
     conn.close()
-    return df
+    return daily_df
 
 # thema frequency
 def get_topic_counts(df):
@@ -90,6 +91,39 @@ def main():
         st.write(f"Since: {oldest_date_str}")
         st.pyplot(fig)
     
+    # Time statistics
+    time_stats = publish_time_statistics(df)
+    
+    #Bar chart
+    #fig, ax = plt.subplots()
+    #ax.bar(time_stats["Time Range"], time_stats["No of News"])
+    #ax.set_xlabel("Time Range")
+    #ax.set_ylabel("No of News")
+    #ax.set_title("News Count by Time Range")
+    #plt.xticks(rotation=45)
+
+    #st.pyplot(fig)
+
+    # Line chart
+    fig, ax = plt.subplots()
+    ax.plot(time_stats["Time Range"], time_stats["No of News"], marker='.', color='r', linestyle='-', linewidth=2)
+
+    # Add text labels
+    for i, txt in enumerate(time_stats["No of News"]):
+        #ax.annotate(txt, (time_stats["Time Range"][i], time_stats["No of News"][i]), textcoords="offset points", xytext=(0,5), ha='center')
+        ax.text(time_stats["Time Range"][i], txt, str(txt), ha='right', va='bottom', fontsize=10)
+
+    # Add gridlines
+    ax.grid(True, which='both', axis='x', linestyle='--', linewidth=0.5)
+
+    ax.set_xlabel("Time Range")
+    ax.set_ylabel("No of News")
+    ax.set_title("News Count by Time Range")
+    plt.xticks(rotation=45)
+
+    st.pyplot(fig)
+
+
     #refreshing the page every 30 min
     while True:
         time.sleep(1 * 60 * 30) 
