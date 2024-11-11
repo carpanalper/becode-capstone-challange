@@ -35,8 +35,8 @@ The program will automatically pull the breaking news titles, add the new titles
 - `streamlitapp.py` reads data from the database and creates bar and line charts showing
    - the most frequent 10 topics of all the entries
    - the number of entries from the last 24 hours 
-   - the number of entries published in ever 2 hours througout the day
-stored in the database so far. Informs the user about the total number of entries, the date of the earliest entry in the database and latest update time of the chart using `pandas` and `matplotlib`
+   - the number of entries published in ever 2 hours througout the day 
+- Informs the user about the total number of entries, the date of the earliest entry in the database and latest update time of the chart using `pandas` and `matplotlib`
 - It is notable that all these dates and times are all shown in the local time zone of the user. Secondly the page is automatically refresh every 30 min to show most updated analysis.
 - Finally, the crucial player for automation is `scheduler.py` which orchestrates and schedules all above-mentioned scripts by using `apscheduler`. It enables pulling data and updating database every 30 minutes. It informs the user about the process on each turn. It also launches streamlit app once and stops when the process is terminated. 
 
