@@ -20,3 +20,13 @@ def publish_time_statistics(df):
     result_df.columns = ["Time Range", "No of News"]
 
     return result_df
+
+def day_agenda(df):
+    # converting date to datetime and extracting the day
+    df['date'] = pd.to_datetime(df['date']).dt.date
+    # counting the number of news per day
+    topic_counts = df.groupby(['date', 'topic']).size().reset_index(name='count')
+    # finding the most frequent topic per day
+    most_frequent_topics = topic_counts.loc[topic_counts.groupby('date')['count'].idxmax()]
+
+    return most_frequent_topics

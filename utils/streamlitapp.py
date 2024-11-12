@@ -6,7 +6,7 @@ import datetime
 import pytz
 import time
 import os
-from functions import publish_time_statistics 
+from functions import publish_time_statistics, day_agenda 
 
 db_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'news.db')
 
@@ -123,6 +123,22 @@ def main():
 
     st.pyplot(fig)
 
+    # daily agenda
+    daily_agenda = day_agenda(df)
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.plot(daily_agenda['date'], daily_agenda['count'], marker='o', color='b', linestyle='-', linewidth=2)
+
+    # Grafik ayarları: her noktada konu adı ve sayıyı gösterme
+    for i, row in daily_agenda.iterrows():
+        ax.text(row['date'], row['count'], f"{row['topic']} ({row['count']})", ha='center', va='bottom')
+
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Most Frequent Topic Count")
+    ax.set_title("Most Frequent Topic per Day")
+    ax.grid(True)
+
+    # Streamlit ile grafiği gösterme
+    st.pyplot(fig)
 
     #refreshing the page every 30 min
     while True:
