@@ -36,7 +36,7 @@ response = requests.get(url)
 soup = bs(response.content, "html.parser")
 
 # Find all <li> elements
-li_elements = soup.find('ul', class_='sc-ggpjZQ iJyTnM').find_all('li')
+li_elements = soup.find_all('li', class_='mb-4 sm:mb-6 md:mb-8')
 scraped_news = []
 
 # Iterate over each <li> element
