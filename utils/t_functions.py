@@ -1,6 +1,8 @@
-from collections import Counter
-from datetime import datetime
 import pandas as pd
+
+# thema frequency
+def get_topic_counts(df):
+    return df['topic'].value_counts().head(10)
 
 def publish_time_statistics(df):
     # defining time ranges and initializing a counter
