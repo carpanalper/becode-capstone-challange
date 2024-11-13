@@ -23,3 +23,15 @@ def get_daily_news():
     daily_df = pd.read_sql(query,conn)
     conn.close()
     return daily_df
+
+# getting the news from last 7 days
+def get_weekly_news():
+    conn = sqlite3.connect(db_path)
+    query = '''
+            SELECT * 
+            FROM news
+            WHERE date >= datetime('now', '-7 day');
+            '''
+    weekly_df = pd.read_sql(query,conn)
+    conn.close()
+    return weekly_df

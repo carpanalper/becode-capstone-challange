@@ -1,13 +1,10 @@
 import streamlit as st
-import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import time
-import os
-from functions import publish_time_statistics, day_agenda, get_topic_counts 
-from queries import get_data_from_db, get_daily_news
-
+from t_functions import publish_time_statistics, day_agenda, get_topic_counts 
+from queries import get_data_from_db, get_daily_news, get_weekly_news
 
 # Streamlit App
 def main():
@@ -39,7 +36,11 @@ def main():
     daily_news = get_daily_news()
     daily_top_10 = daily_news['topic'].value_counts().head(10)
 
-    col1, col2 = st.columns(2)
+    #weekly top 10
+    weekly_news = get_weekly_news()
+    weekly_top_10 = weekly_news['topic'].value_counts().head(10)
+
+    col1, col2, col3 = st.columns(3)
 
     with col1: 
         # Daily Bar chart
@@ -54,6 +55,18 @@ def main():
         st.pyplot(fig)
       
     with col2:
+        # Weekly Bar chart
+        fig, ax = plt.subplots()
+        ax.bar(weekly_top_10.index, weekly_top_10.values)
+        ax.set_xlabel('Topic')
+        ax.set_ylabel('No of News')
+        ax.set_title('Frequency of Topics (Last 7 days)')
+        plt.xticks(rotation=90)
+        # show chart
+        st.write(f"Last 7 days: {len(weekly_news)} Entries")
+        st.pyplot(fig)
+    
+    with col3:
         # All time Bar chart 
         fig, ax = plt.subplots()
         ax.bar(topic_counts.index, topic_counts.values)
@@ -65,7 +78,7 @@ def main():
         # show chart
         st.write(f"Since: {oldest_date_str}")
         st.pyplot(fig)
-    
+
     # Time statistics
     time_stats = publish_time_statistics(df)
     
