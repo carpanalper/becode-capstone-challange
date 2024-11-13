@@ -35,3 +35,13 @@ def get_weekly_news():
     weekly_df = pd.read_sql(query,conn)
     conn.close()
     return weekly_df
+
+def delete_null_title():
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute('''
+    DELETE FROM news
+    WHERE title IS NULL
+    ''')
+    conn.commit()
+    conn.close()

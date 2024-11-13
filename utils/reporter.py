@@ -56,7 +56,7 @@ for li in li_elements:
         topic = None
 
     # Find the <h3> element
-    header = li.find('h3')
+    header = li.find('p')
     if header:
        title = header.text
     else:
