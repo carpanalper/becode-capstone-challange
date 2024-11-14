@@ -54,6 +54,7 @@ for li in li_elements:
         topic = thema.text
     else:
         topic = None
+        print("Null topic value detected")
 
     # Find the <h3> element
     header = li.find('p')
@@ -61,13 +62,15 @@ for li in li_elements:
        title = header.text
     else:
         title = None
+        print("Null title value detected")
 
     # Find the <time> element
     time_tag = li.find('time') 
     if time_tag:
         datetime_value = time_tag.get('datetime')
     else:
-        datetime_value = None 
+        datetime_value = None
+        print("Null datetime value detected")
 
     #append data to the list
     scraped_news.append({
