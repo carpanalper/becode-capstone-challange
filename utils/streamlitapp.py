@@ -29,7 +29,6 @@ def main():
 
     # Info
     st.subheader('VRT Breaking News Topic Distribution')
-    st.write(f"Total Entries: {total_entries}")
     st.write(f"Last Update: {last_update}")
 
     #daily top 10
@@ -40,9 +39,11 @@ def main():
     weekly_news = get_weekly_news()
     weekly_top_10 = weekly_news['topic'].value_counts().head(10)
 
-    col1, col2, col3 = st.columns(3)
-
-    with col1: 
+    option = st.selectbox(
+    "Choose the range of entries",
+    ("Last 24 Hours", "Last Week", "All Time"),
+)
+    if option == 'Last 24 Hours':
         # Daily Bar chart
         fig, ax = plt.subplots()
         ax.bar(daily_top_10.index, daily_top_10.values)
@@ -53,8 +54,8 @@ def main():
         #show chart
         st.write(f"Last 24 hours: {len(daily_news)} Entries")
         st.pyplot(fig)
-      
-    with col2:
+
+    elif option == 'Last Week':
         # Weekly Bar chart
         fig, ax = plt.subplots()
         ax.bar(weekly_top_10.index, weekly_top_10.values)
@@ -65,8 +66,8 @@ def main():
         # show chart
         st.write(f"Last 7 days: {len(weekly_news)} Entries")
         st.pyplot(fig)
-    
-    with col3:
+
+    elif option == 'All Time':
         # All time Bar chart 
         fig, ax = plt.subplots()
         ax.bar(topic_counts.index, topic_counts.values)
@@ -74,24 +75,14 @@ def main():
         ax.set_ylabel('No of News')
         ax.set_title('Frequency of Topics (All Time)')
         plt.xticks(rotation=90)
-        
         # show chart
         st.write(f"Since: {oldest_date_str}")
+        st.write(f"Total Entries: {total_entries}")
         st.pyplot(fig)
 
     # Time statistics
     time_stats = publish_time_statistics(df)
     
-    #Bar chart
-    #fig, ax = plt.subplots()
-    #ax.bar(time_stats["Time Range"], time_stats["No of News"])
-    #ax.set_xlabel("Time Range")
-    #ax.set_ylabel("No of News")
-    #ax.set_title("News Count by Time Range")
-    #plt.xticks(rotation=45)
-
-    #st.pyplot(fig)
-
     # Line chart
     fig, ax = plt.subplots()
     ax.plot(time_stats["Time Range"], time_stats["No of News"], marker='.', color='r', linestyle='-', linewidth=2)
