@@ -115,6 +115,7 @@ def main():
     ax.set_ylabel("Most Frequent Topic Count")
     ax.set_title("Most Frequent Topic per Day")
     ax.grid(True)
+    plt.xticks(rotation=90)
 
     # Streamlit ile grafiği gösterme
     st.pyplot(fig)
