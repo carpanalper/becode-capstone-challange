@@ -20,6 +20,13 @@ def append_to_json(new_data):
     # Filter out the new data that already exists in the JSON file
     unique_data = [entry for entry in new_data if entry['link'] not in existing_links]
 
+    # Check for null values in the unique data
+    for entry in unique_data:  # loop for each entry
+        for key, value in entry.items():  # check each key-value pair
+            if value is None:
+                print(f"'{key}' has a null value in new entry: {entry}")
+
+
     # Append the unique data to the list
     data.extend(unique_data)
 
