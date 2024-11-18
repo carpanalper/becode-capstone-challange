@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import time
-from t_functions import publish_time_statistics, day_agenda, get_topic_counts 
+from t_functions import publish_time_statistics, day_agenda, get_topic_counts, weekly_agenda 
 from queries import get_data_from_db, get_daily_news, get_weekly_news
 
 # Streamlit App
@@ -102,22 +102,30 @@ def main():
 
     st.pyplot(fig)
 
-    # daily agenda
-    daily_agenda = day_agenda(df)
+    # agenda
+    agenda = weekly_agenda(df)
+
+    # Plotting the results
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.plot(daily_agenda['date'], daily_agenda['count'], marker='o', color='b', linestyle='-', linewidth=2)
+    ax.plot(agenda['week_start'], agenda['count'], marker='o', color='b', linestyle='-', linewidth=2)
 
-    # Grafik ayarları: her noktada konu adı ve sayıyı gösterme
-    for i, row in daily_agenda.iterrows():
-        ax.text(row['date'], row['count'], f"{row['topic']} ({row['count']})", ha='center', va='bottom')
+    # Annotate each point with topic name and count
+    for i, row in agenda.iterrows():
+        ax.text(row['week_start'], row['count'], f"{row['topic']}", 
+                ha='center', va='bottom', fontsize=8)
 
-    ax.set_xlabel("Date")
+    ax.set_xticks(agenda['week_start']) # Set the x-ticks to be the week start dates
+
+    # Set axis labels and title
+    ax.set_xlabel("Week Start Date")
     ax.set_ylabel("Most Frequent Topic Count")
-    ax.set_title("Most Frequent Topic per Day")
+    ax.set_title("Most Frequent Topic per Week")
     ax.grid(True)
-    plt.xticks(rotation=90)
 
-    # Streamlit ile grafiği gösterme
+    # Rotate X-axis labels for better readability
+    plt.xticks(rotation=45)
+
+    # Display the plot in Streamlit
     st.pyplot(fig)
 
     #refreshing the page every 30 min

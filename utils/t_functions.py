@@ -32,3 +32,25 @@ def day_agenda(df):
     most_frequent_topics = topic_counts.loc[topic_counts.groupby('date')['count'].idxmax()]
 
     return most_frequent_topics
+
+
+def weekly_agenda(df):
+    # Convert 'date' to datetime and extract the week start (Monday as the start of the week)
+    df['date'] = pd.to_datetime(df['date'], errors='coerce')
+    if df['date'].isna().any():
+        raise ValueError("Some entries in 'date' could not be converted to datetime.")
+    
+    df['week_start'] = df['date'] - pd.to_timedelta(df['date'].dt.weekday, unit='d')
+    df['week_start'] = df['week_start'].dt.date  # Extract the date part only
+
+    # Count the number of news per week and topic
+    topic_counts = df.groupby(['week_start', 'topic']).size().reset_index(name='count')
+
+    # Find the most frequent topic per week
+    most_frequent_topics = topic_counts.loc[topic_counts.groupby('week_start')['count'].idxmax()]
+
+    # Sort by week_start for consistency in plots
+    most_frequent_topics = most_frequent_topics.sort_values(by='week_start')
+    
+    return most_frequent_topics
+
