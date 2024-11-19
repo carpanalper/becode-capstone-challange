@@ -31,6 +31,12 @@ def main():
     st.subheader('VRT Breaking News Topic Distribution')
     st.write(f"Last Update: {last_update}")
 
+    #topics 
+    df_cleaned = df.dropna(subset=['topic'])
+    sorted_topics = sorted(df_cleaned['topic'].unique()) 
+    st.multiselect("Topics:", options=sorted_topics, default='Leuven')
+    st.write(f"Total Topics: {len(sorted_topics)}")
+
     #daily top 10
     daily_news = get_daily_news()
     daily_top_10 = daily_news['topic'].value_counts().head(10)
