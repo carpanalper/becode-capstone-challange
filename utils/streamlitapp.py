@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import time
-from t_functions import publish_time_statistics, day_agenda, get_topic_counts, weekly_agenda 
+from t_functions import publish_time_statistics, get_topic_counts, weekly_agenda 
 from queries import get_data_from_db, get_daily_news, get_weekly_news
 
 # Streamlit App
@@ -30,13 +30,27 @@ def main():
     # Info
     st.subheader('VRT Breaking News Topic Distribution')
     st.write(f"Last Update: {last_update}")
+    st.write(f"Total entries: {total_entries}")
+
+    st.divider()
 
     #topics 
     df_cleaned = df.dropna(subset=['topic'])
     sorted_topics = sorted(df_cleaned['topic'].unique()) 
-    st.multiselect("Topics:", options=sorted_topics, default='Leuven')
+    selected_topics = st.multiselect("Choose Topics:", options=sorted_topics, default='Leuven')
     st.write(f"Total Topics: {len(sorted_topics)}")
+    st.write(f"Latest News for Selected Topics:")
 
+    if selected_topics:
+        filtered_df = df_cleaned[df_cleaned['topic'].isin(selected_topics)]
+        latest_news = filtered_df.sort_values(by='date', ascending=False).head(3)
+        for idx, row in latest_news.iterrows():
+            st.write(f"- **{row['title']}** (Topic: {row['topic']}, Date: {row['date'].strftime('%Y-%m-%d')})")
+    else:
+        st.write("Please select a topic to display the latest news.")
+
+    st.divider()
+    
     #daily top 10
     daily_news = get_daily_news()
     daily_top_10 = daily_news['topic'].value_counts().head(10)
@@ -47,7 +61,7 @@ def main():
 
     option = st.selectbox(
     "Choose the range of entries",
-    ("Last 24 Hours", "Last Week", "All Time"),
+    ("Last 24 Hours", "Last Week", "All Time"), index=1
 )
     if option == 'Last 24 Hours':
         # Daily Bar chart
