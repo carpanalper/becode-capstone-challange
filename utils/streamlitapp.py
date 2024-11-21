@@ -45,7 +45,7 @@ def main():
         filtered_df = df_cleaned[df_cleaned['topic'].isin(selected_topics)]
         latest_news = filtered_df.sort_values(by='date', ascending=False).head(3)
         for idx, row in latest_news.iterrows():
-            st.write(f"- **{row['title']}** (Topic: {row['topic']}, Date: {row['date'].strftime('%Y-%m-%d')})")
+            st.write(f"- **{row['title'].strip()}** (Topic: {row['topic']}, Date: {row['date'].strftime('%Y-%m-%d')})")
     else:
         st.write("Please select a topic to display the latest news.")
 
