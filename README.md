@@ -33,6 +33,7 @@ The program will automatically pull the breaking news titles, add the new titles
 - then archives scraped data into the `news.json` file by checking the uniqueness based on their url. also creates `latest_news.json` file which is updated with only the new entries on each run with the above-mentioned webpage. finally informs user about the total number of archived entries and the number of new entries.
 - `db_update.py` builds a database to store scraped data by using the url as a primary key. then updates the database with the `latest_news.json`  
 - `streamlitapp.py` reads data from the database and creates bar and line charts showing
+   - most recent 3 entries on selected topics under multiselectbox
    - the most frequent 10 topics of all the entries, from last week and last 24 hours under a selectbox
    - the number of entries published in ever 2 hours througout the day 
    - most frequent topic each week so far
@@ -41,11 +42,10 @@ The program will automatically pull the breaking news titles, add the new titles
 - Finally, the crucial player for automation is `scheduler.py` which orchestrates and schedules all above-mentioned scripts by using `apscheduler`. It enables pulling data and updating database every 30 minutes. It informs the user about the process on each turn. It also launches streamlit app once and stops when the process is terminated. 
 
 ## Future Improvements  
-- Better design for the project folders
 - Necassary configurations for running the app on a cloud
 - Pulling historical data from various resources to improve and enrich analysis
 - Creating a more complicated database
-- Various sql queries for different analysis
+- Various SQL queries for different analysis
 - Different visualisations like trending topics over time, daily or monthly visualisations, sentiment analysis of titles etc.
 - More professional README
 
