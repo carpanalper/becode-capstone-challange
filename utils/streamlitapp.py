@@ -122,15 +122,11 @@ def main():
 
     st.pyplot(fig)
 
-    # agenda
+    # weekly agenda table
     st.subheader("Most Frequent Topic per Week")
     agenda = weekly_agenda(df)
-
-    # list of topics
-    for i, row in agenda.iterrows():
-        st.write(f"{row['week_start'].strftime('%Y-%m-%d')}: {row['topic']} ({row['count']} news)")
-
-
+    st.dataframe(agenda, use_container_width=True, hide_index=True)
+    
     #refreshing the page every 30 min
     while True:
         time.sleep(1 * 60 * 30) 

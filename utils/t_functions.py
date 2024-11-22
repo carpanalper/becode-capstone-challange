@@ -50,7 +50,7 @@ def weekly_agenda(df):
     most_frequent_topics = topic_counts.loc[topic_counts.groupby('week_start')['count'].idxmax()]
 
     # Sort by week_start for consistency in plots
-    most_frequent_topics = most_frequent_topics.sort_values(by='week_start')
+    most_frequent_topics = most_frequent_topics.sort_values(by='week_start', ascending=False)
     
     return most_frequent_topics
 
