@@ -49,8 +49,16 @@ def weekly_agenda(df):
     # Find the most frequent topic per week
     most_frequent_topics = topic_counts.loc[topic_counts.groupby('week_start')['count'].idxmax()]
 
+    # Calculate the total news count per week
+    total_weekly_counts = topic_counts.groupby('week_start')['count'].sum().reset_index(name='total_entries')
+
+    # Merge the most frequent topics with the total weekly counts
+    most_frequent_topics = most_frequent_topics.merge(total_weekly_counts, on='week_start')
+
+    # Calculate the percentage of the most frequent topic
+    most_frequent_topics['percentage'] = round((most_frequent_topics['count'] / most_frequent_topics['total_entries']) * 100, 2)
+
     # Sort by week_start for consistency in plots
     most_frequent_topics = most_frequent_topics.sort_values(by='week_start', ascending=False)
     
     return most_frequent_topics
-
