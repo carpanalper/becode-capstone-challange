@@ -123,30 +123,13 @@ def main():
     st.pyplot(fig)
 
     # agenda
+    st.subheader("Most Frequent Topic per Week")
     agenda = weekly_agenda(df)
 
-    # Plotting the results
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.plot(agenda['week_start'], agenda['count'], marker='o', color='b', linestyle='-', linewidth=2)
-
-    # Annotate each point with topic name and count
+    # list of topics
     for i, row in agenda.iterrows():
-        ax.text(row['week_start'], row['count'], f"{row['topic']}", 
-                ha='center', va='bottom', fontsize=8)
+        st.write(f"{row['week_start'].strftime('%Y-%m-%d')}: {row['topic']} ({row['count']} news)")
 
-    ax.set_xticks(agenda['week_start']) # Set the x-ticks to be the week start dates
-
-    # Set axis labels and title
-    ax.set_xlabel("Week Start Date")
-    ax.set_ylabel("Most Frequent Topic Count")
-    ax.set_title("Most Frequent Topic per Week")
-    ax.grid(True)
-
-    # Rotate X-axis labels for better readability
-    plt.xticks(rotation=45)
-
-    # Display the plot in Streamlit
-    st.pyplot(fig)
 
     #refreshing the page every 30 min
     while True:
