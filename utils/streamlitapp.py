@@ -13,6 +13,7 @@ def main():
     
     # frequency calculation
     topic_counts = get_topic_counts(df)
+    topic_counts = topic_counts.sort_values(ascending=True)
 
     #since
     local_tz = datetime.datetime.now().astimezone().tzinfo
@@ -54,10 +55,12 @@ def main():
     #daily top 10
     daily_news = get_daily_news()
     daily_top_10 = daily_news['topic'].value_counts().head(10)
+    daily_top_10 = daily_top_10.sort_values(ascending=True)
 
     #weekly top 10
     weekly_news = get_weekly_news()
     weekly_top_10 = weekly_news['topic'].value_counts().head(10)
+    weekly_top_10 = weekly_top_10.sort_values(ascending=True)
 
     option = st.selectbox(
     "Choose the range of entries",
@@ -66,11 +69,12 @@ def main():
     if option == 'Last 24 Hours':
         # Daily Bar chart
         fig, ax = plt.subplots()
-        ax.bar(daily_top_10.index, daily_top_10.values)
-        ax.set_xlabel('Topic')
-        ax.set_ylabel('No of News')
+        ax.barh(daily_top_10.index, daily_top_10.values)
+        ax.grid(True, which='both', axis='x', linestyle='--', linewidth=0.5)
+        ax.set_xlabel('No of News')
+        ax.set_ylabel('Topic')
         ax.set_title('Frequency of Topics (Last 24 hours)')
-        plt.xticks(rotation=90)
+        plt.xticks(rotation=0)
         #show chart
         st.write(f"Last 24 hours: {len(daily_news)} Entries")
         st.pyplot(fig)
@@ -78,11 +82,12 @@ def main():
     elif option == 'Last Week':
         # Weekly Bar chart
         fig, ax = plt.subplots()
-        ax.bar(weekly_top_10.index, weekly_top_10.values)
-        ax.set_xlabel('Topic')
-        ax.set_ylabel('No of News')
+        ax.barh(weekly_top_10.index, weekly_top_10.values)
+        ax.grid(True, which='both', axis='x', linestyle='--', linewidth=0.5)
+        ax.set_xlabel('No of News')
+        ax.set_ylabel('Topic')
         ax.set_title('Frequency of Topics (Last 7 days)')
-        plt.xticks(rotation=90)
+        plt.xticks(rotation=0)
         # show chart
         st.write(f"Last 7 days: {len(weekly_news)} Entries")
         st.pyplot(fig)
@@ -90,15 +95,18 @@ def main():
     elif option == 'All Time':
         # All time Bar chart 
         fig, ax = plt.subplots()
-        ax.bar(topic_counts.index, topic_counts.values)
-        ax.set_xlabel('Topic')
-        ax.set_ylabel('No of News')
+        ax.barh(topic_counts.index, topic_counts.values)
+        ax.grid(True, which='both', axis='x', linestyle='--', linewidth=0.5)
+        ax.set_xlabel('No of News')
+        ax.set_ylabel('Topic')
         ax.set_title('Frequency of Topics (All Time)')
-        plt.xticks(rotation=90)
+        plt.xticks(rotation=0)
         # show chart
         st.write(f"Since: {oldest_date_str}")
         st.write(f"Total Entries: {total_entries}")
         st.pyplot(fig)
+
+    st.divider()
 
     # Time statistics
     time_stats = publish_time_statistics(df)
@@ -119,8 +127,9 @@ def main():
     ax.set_ylabel("No of News")
     ax.set_title("News Count by Time Range")
     plt.xticks(rotation=45)
-
     st.pyplot(fig)
+
+    st.divider()
 
     # weekly agenda table
     st.subheader("Most Frequent Topic per Week")
