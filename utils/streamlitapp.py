@@ -3,8 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import time
-from t_functions import publish_time_statistics, get_topic_counts, weekly_agenda 
-from queries import get_data_from_db, get_daily_news, get_weekly_news
+from t_functions import get_topic_counts, weekly_agenda 
+from queries import get_data_from_db, get_daily_news, get_weekly_news, get_time_distribution
 
 # Streamlit App
 def main():
@@ -108,25 +108,18 @@ def main():
 
     st.divider()
 
-    # Time statistics
-    time_stats = publish_time_statistics(df)
+    #time distribution
+    st.subheader("News Distribution by Hour")
+    time_df = get_time_distribution()
+    time_df['hour'] = time_df['hour'].astype(int)
     
-    # Line chart
-    fig, ax = plt.subplots()
-    ax.plot(time_stats["Time Range"], time_stats["No of News"], marker='.', color='r', linestyle='-', linewidth=2)
-
-    # Add text labels
-    for i, txt in enumerate(time_stats["No of News"]):
-        #ax.annotate(txt, (time_stats["Time Range"][i], time_stats["No of News"][i]), textcoords="offset points", xytext=(0,5), ha='center')
-        ax.text(time_stats["Time Range"][i], txt, str(txt), ha='right', va='bottom', fontsize=10)
-
-    # Add gridlines
-    ax.grid(True, which='both', axis='x', linestyle='--', linewidth=0.5)
-
-    ax.set_xlabel("Time Range")
-    ax.set_ylabel("No of News")
-    ax.set_title("News Count by Time Range")
-    plt.xticks(rotation=45)
+    # Histogram
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.hist(time_df['hour'], weights=time_df['count'], bins=12, color='r', alpha=0.7, rwidth=0.85)
+    ax.set_xlabel('Hour')
+    ax.set_ylabel('No of News')
+    ax.grid(True, which='both', axis='y', linestyle='--', linewidth=0.5)
+    ax.set_xticks(range(0, 24))
     st.pyplot(fig)
 
     st.divider()

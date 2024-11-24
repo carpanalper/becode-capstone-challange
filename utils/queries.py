@@ -36,6 +36,19 @@ def get_weekly_news():
     conn.close()
     return weekly_df
 
+# time distribution of news
+def get_time_distribution():
+    conn = sqlite3.connect(db_path)
+    query = '''
+            SELECT strftime('%H', date) AS hour, COUNT(*) AS count
+            FROM news
+            GROUP BY hour
+            ORDER BY hour;
+            '''
+    time_df = pd.read_sql(query,conn)
+    conn.close()
+    return time_df
+
 def delete_null_title():
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
