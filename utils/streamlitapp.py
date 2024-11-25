@@ -149,6 +149,12 @@ def main():
 
     # Streamlit
     st.pyplot(fig)
+
+    filtered_text = filtered_text.split()
+    df_words = pd.DataFrame(filtered_text, columns=['words'])
+    word_ranking = df_words['words'].value_counts().head(10)
+    st.dataframe(word_ranking, use_container_width=True)
+
     
     #refreshing the page every 30 min
     while True:
