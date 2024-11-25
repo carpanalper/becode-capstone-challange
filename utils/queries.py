@@ -49,6 +49,18 @@ def get_time_distribution():
     conn.close()
     return time_df
 
+# titles 
+def get_titles():
+    conn = sqlite3.connect(db_path)
+    query = '''
+            SELECT title
+            FROM news;
+            '''
+    titles_df = pd.read_sql(query,conn)
+    conn.close()
+
+    return titles_df
+
 def delete_null_title():
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()

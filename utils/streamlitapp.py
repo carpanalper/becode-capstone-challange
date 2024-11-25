@@ -3,8 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import time
-from t_functions import get_topic_counts, weekly_agenda 
-from queries import get_data_from_db, get_daily_news, get_weekly_news, get_time_distribution
+from wordcloud import WordCloud
+from t_functions import get_topic_counts, weekly_agenda, remove_stopwords
+from queries import get_data_from_db, get_daily_news, get_weekly_news, get_time_distribution, get_titles
 
 # Streamlit App
 def main():
@@ -128,6 +129,26 @@ def main():
     st.subheader("Most Frequent Topic per Week")
     agenda = weekly_agenda(df)
     st.dataframe(agenda, use_container_width=True, hide_index=True)
+
+    st.divider()
+
+    #word cloud
+    st.subheader("Word Cloud")
+    title_df = get_titles()
+    text = " ".join(title_df['title'].tolist())
+    filtered_text = remove_stopwords(text)
+   
+
+    if filtered_text:
+        wordcloud = WordCloud(width=800, height=400, background_color ='white').generate(filtered_text)
+
+        # visualisation
+        fig, ax = plt.subplots()
+        ax.imshow(wordcloud, interpolation='bilinear')
+        ax.axis("off")
+
+    # Streamlit
+    st.pyplot(fig)
     
     #refreshing the page every 30 min
     while True:
