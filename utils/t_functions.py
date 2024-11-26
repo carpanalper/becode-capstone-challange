@@ -1,5 +1,6 @@
 import pandas as pd
-from queries import get_titles
+import re
+
 
 # thema frequency
 def get_topic_counts(df):
@@ -112,3 +113,7 @@ def remove_stopwords(text):
     
     filtered_text = " ".join([word for word in text.split() if word.lower() not in stop_words])
     return filtered_text
+
+def clean_special_characters(text):
+    cleaned_text = re.sub(r'[^\w\s]', '', text)
+    return cleaned_text

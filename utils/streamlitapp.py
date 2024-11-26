@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import datetime
 import time
 from wordcloud import WordCloud
-from t_functions import get_topic_counts, weekly_agenda, remove_stopwords
+from t_functions import get_topic_counts, weekly_agenda, remove_stopwords, clean_special_characters
 from queries import get_data_from_db, get_daily_news, get_weekly_news, get_time_distribution, get_titles
 
 # Streamlit App
@@ -150,11 +150,20 @@ def main():
     # Streamlit
     st.pyplot(fig)
 
-    filtered_text = filtered_text.split()
-    df_words = pd.DataFrame(filtered_text, columns=['words'])
-    word_ranking = df_words['words'].value_counts().head(10)
-    st.dataframe(word_ranking, use_container_width=True)
+    st.divider()    
+    prop_names = []
+    for word in filtered_text.split():
+        if word[0].isupper():
+            word = clean_special_characters(word)
+            prop_names.append(word)
+        else:
+            continue
 
+    prop_df = pd.DataFrame(prop_names, columns=['words'])
+    prop_df = prop_df['words'].value_counts().head(5)   
+    st.subheader("Proper Names on Titles") 
+    st.dataframe(prop_df, use_container_width=True)
+    st.write("Total Proper Names: ", len(prop_names))
     
     #refreshing the page every 30 min
     while True:
