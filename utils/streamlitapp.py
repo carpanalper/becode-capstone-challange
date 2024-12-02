@@ -113,7 +113,8 @@ def main():
     st.subheader("News Distribution by Hour")
     time_df = get_time_distribution()
     time_df['hour'] = time_df['hour'].astype(int)
-    
+
+
     # Histogram
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.hist(time_df['hour'], weights=time_df['count'], bins=12, color='r', alpha=0.7, rwidth=0.85)
@@ -121,6 +122,25 @@ def main():
     ax.set_ylabel('No of News')
     ax.grid(True, which='both', axis='y', linestyle='--', linewidth=0.5)
     ax.set_xticks(range(0, 24))
+    st.pyplot(fig)
+
+    #weekday distribution
+    st.subheader("News Distribution by Weekday")
+    df['weekday'] = df['date'].dt.day_name()
+    weekday_distribution = df.groupby('weekday').size().reset_index(name='count')
+    weekday_distribution['weekday'] = pd.Categorical(
+        weekday_distribution['weekday'],
+        categories=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        ordered=True
+    )
+    weekday_distribution = weekday_distribution.sort_values('weekday')
+    # Bar chart 
+    fig, ax = plt.subplots()
+    ax.bar(weekday_distribution['weekday'], weekday_distribution['count'], color='skyblue')
+    ax.set_xlabel('Weekday')
+    ax.set_ylabel('Number of News')
+    ax.grid(True, which='both', axis='y', linestyle='--', linewidth=0.5)
+    plt.xticks(rotation=45)
     st.pyplot(fig)
 
     st.divider()

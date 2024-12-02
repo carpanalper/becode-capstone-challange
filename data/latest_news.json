@@ -1,14 +1,356 @@
 [
     {
-        "title": "Renovatiepremie moet 30 hectare Waas bos klimaatrobuuster en biodiverser maken",
-        "topic": "Waasland",
-        "date": "2024-11-25T19:53:02Z",
-        "link": "https://www.vrt.be/vrtnws/nl/2024/11/25/wase-bosrenovatie-30-hectare-bos-klimaatrobuuster-en-biodiverser/"
+        "title": "Geen kersttrams in Vlaanderen door twijfels over veiligheid",
+        "topic": "Gent",
+        "date": "2024-12-02T15:20:31Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/historische-kersttram-de-lijn-technisch-probleem-brand-150-jaar/"
     },
     {
-        "title": "Evaluatie wijkmobiliteitsplan in Gentbrugge botst op kritiek: \"Stad bevraagt ook kinderen vanaf 10 jaar\"\u00a0",
+        "title": "Truienaar (63) riskeert 18 maanden cel omdat hij naaktfoto's achterlaat op fietsroutes: \"Meeste reacties waren nochtans positief\"",
+        "topic": "Sint-Truiden",
+        "date": "2024-12-02T15:16:45Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/naaktfoto-s-fietsroutes/"
+    },
+    {
+        "title": "Franse premier Barnier\u00a0zet parlement buitenspel om begroting door te drukken, oppositie wil vertrouwensstemming",
+        "topic": "Frankrijk",
+        "date": "2024-12-02T15:08:25Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/krijgt-franse-premier-barnier-begroting-gestemd-regering-hangt/"
+    },
+    {
+        "title": "7 mannen veroordeeld tot celstraffen voor ontvoering van ex-portier 'De Schedel' in Waarloos",
+        "topic": "Antwerpen",
+        "date": "2024-12-02T15:03:23Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/7-mannen-veroordeeld-tot-celstraffen-voor-ontvoering-van-ex-port/"
+    },
+    {
+        "title": "Nieuwe deputatie wil gezinsbelasting in provincie Antwerpen afschaffen",
+        "topic": "Provincieraadsverkiezingen",
+        "date": "2024-12-02T14:38:40Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/nieuwe-deputatie-wil-gezinsbelasting-in-provincie-antwerpen-afsc/"
+    },
+    {
+        "title": "\"Geen daglicht meer in mijn huis\": container van 3 verdiepingen hoog staat pal voor enkele woningen in Elsene",
+        "topic": "Elsene",
+        "date": "2024-12-02T14:33:04Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/geen-daglicht-meer-in-mijn-huis-container-van-3-verdiepingen/"
+    },
+    {
+        "title": "Geen hertelling in Ronse, Raad voor Verkiezingsbetwistingen verwerpt klacht van Groen-kandidaat Lech Schelfout",
+        "topic": "Gemeenteraadsverkiezingen",
+        "date": "2024-12-02T14:20:33Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/geen-hertelling-in-ronse-raad-voor-verkiezingsbetwistingen-verw/"
+    },
+    {
+        "title": "Avondophaling in historisch centrum van Brugge wordt afgeschaft: \"Vuilnis dat te vroeg werd buitengezet, gaf slordige indruk\"",
+        "topic": "Brugge",
+        "date": "2024-12-02T14:18:23Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/avondophaling-in-historisch-centrum-van-brugge-wordt-afgeschaft/"
+    },
+    {
+        "title": "Nieuwe West-Vlaamse deputatie ge\u00efnstalleerd: N-VA voor het eerst vertegenwoordigd",
+        "topic": "Provincieraadsverkiezingen",
+        "date": "2024-12-02T14:11:20Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/nieuwe-provincieraad-geinstalleerd-in-west-vlaanderen/"
+    },
+    {
+        "title": "UNRWA pauzeert hulpleveringen aan Palestijnen in Gaza via belangrijkste grensovergang: \"Plunderingen en tegenwerking van Isra\u00ebl\"",
+        "topic": "Conflict Midden-Oosten",
+        "date": "2024-12-02T14:05:32Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/unrwa-pauzeert-hulpleveringen-aan-palestijnen-via-de-belangrijks/"
+    },
+    {
+        "title": "Vrouw (46) uit Oud-Turnhout laat bloedspoor achter in woning tijdens inbraak: 1 jaar cel",
+        "topic": "Oud-Turnhout",
+        "date": "2024-12-02T14:04:59Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/dievegge-uit-oud-turnhout-laat-bloedspoor-achter-in-woning-1-ja/"
+    },
+    {
+        "title": "Boomverzorgers uit Hasselt maken naaktkalender voor De Warmste Week: \"Beestenbos gaat bloot\"",
+        "topic": "Hasselt",
+        "date": "2024-12-02T13:47:49Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/11/28/boomverzorgers-uit-hasselt-maken-naaktkalender-voor-de-warmste-w/"
+    },
+    {
+        "title": "Na 3 dagen weer stromend water in Warandestraat in Humbeek, wel groot zinkgat in de straat",
+        "topic": "Humbeek",
+        "date": "2024-12-02T13:32:53Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/3-dagen-geen-water-warandestraat-humbeek-grimbergen-leidingbreuk/"
+    },
+    {
+        "title": "Parket onderzoekt nieuw geval van poging tot verkrachting in Ter Kamerenbos",
+        "topic": "Brussel (Stad)",
+        "date": "2024-12-02T13:32:33Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/parket-onderzoekt-nieuw-geval-van-poging-tot-verkrachting-in-ter/"
+    },
+    {
+        "title": "'Klopt da wel?': Vlaamse influencers slaan handen in elkaar tegen fake news en desinformatie",
+        "topic": "Cultuur & Media",
+        "date": "2024-12-02T13:15:57Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/vlaamse-influencers-slaan-handen-in-elkaar-tegen-fake-news-en-de/"
+    },
+    {
+        "title": "Update over toestand Tom Waes: \"Hij moest niet gereanimeerd worden na ongeval, scan moet zicht geven op mogelijke breuken\"",
+        "topic": "Tom Waes",
+        "date": "2024-12-02T12:58:54Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/tom-waes-fup/"
+    },
+    {
+        "title": "Bejaarde man (96) overleden die in Antwerpen CO-vergiftiging opliep  ",
+        "topic": "Antwerpen",
+        "date": "2024-12-02T12:58:28Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/bejaarde-man-96-overleden-die-in-antwerpen-co-vergiftiging-opl/"
+    },
+    {
+        "title": "Familie van Dries De Graeve uit Gent die in Marokko verdween, schakelt\nAI in om hem op te sporen",
         "topic": "Gent",
-        "date": "2024-11-25T19:46:26Z",
-        "link": "https://www.vrt.be/vrtnws/nl/2024/11/25/wijkmobiliteitplan-gentbrugge-evaluatie-bevraging-complexe-enque/"
+        "date": "2024-12-02T12:57:03Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/dries-de-graeve-vermist-opsporing-ai-gezichtsherkenning/"
+    },
+    {
+        "title": "Eerste officieel bezoek van VS-president aan zuidelijk Afrika in bijna 10 jaar, Biden wil invloed China tegengaan",
+        "topic": "Afrika",
+        "date": "2024-12-02T12:52:46Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/1e-officieel-bezoek-van-amerikaanse-president-aan-sub-sahara-afr/"
+    },
+    {
+        "title": "PS stapt uit regeringsonderhandelingen in Brussel: \"Voorwaarden niet langer vervuld\"",
+        "topic": "Brusselse verkiezingen",
+        "date": "2024-12-02T12:43:01Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/ps-brusselse-formatie/"
+    },
+    {
+        "title": "Brand verwoest loods stadsmagazijn Tienen, strooiwagen en bezemwagens vernield",
+        "topic": "Tienen",
+        "date": "2024-12-02T12:28:00Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/tienen-brand-loods-stadsmagazijn-brandweer/"
+    },
+    {
+        "title": "Nieuwe Oost-Vlaamse provincieraadsleden en gedeputeerden leggen eed af",
+        "topic": "Provincieraadsverkiezingen",
+        "date": "2024-12-02T12:25:28Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/nieuwe-raadsleden-en-gedeputeerden-leggen-eed-af/"
+    },
+    {
+        "title": "Sint-Niklaas krijgt extra opstijgplaats voor luchtballonnen: \"Zo moeten we minder rekening houden met beperkingen\"",
+        "topic": "Sint-Niklaas",
+        "date": "2024-12-02T12:10:56Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/sint-niklaas-krijgt-een-extra-opstijgplaats-voor-luchtballonnen/"
+    },
+    {
+        "title": "Tien jaar cel voor Oostendenaar voor moordpoging op chauffeur Club Brugge",
+        "topic": "Justitie",
+        "date": "2024-12-02T11:58:14Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/tien-jaar-cel-voor-oostendenaar-voor-moordpoging-op-chauffeur-cl/"
+    },
+    {
+        "title": "Muzikant Bolis Pupul over dubbel gevoel bij nakend vaderschap: \"Ook triestig geweest omdat mijn leven zo verandert\"",
+        "topic": "Muziek",
+        "date": "2024-12-02T11:50:10Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/bolis-pupul-vaderschap/"
+    },
+    {
+        "title": "Hof van beroep veroordeelt Belgische staat alsnog voor ontvoering metissenkinderen in Congo: \"Misdaad tegen de mensheid\"",
+        "topic": "Congo",
+        "date": "2024-12-02T11:46:28Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/hof-van-beroep-veroordeelt-belgische-staat-alsnog-voor-ontvoerin/"
+    },
+    {
+        "title": "Elton John (77) bijna volledig blind na zware oogontsteking: \"Ik kan geen songteksten meer lezen\"",
+        "topic": "Muziek",
+        "date": "2024-12-02T11:41:45Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/elton-john-77-bijna-volledig-blind-na-oogontsteking-kan-mijn/"
+    },
+    {
+        "title": "23 van de 25 kerstbomen kunnen na 1 jaar opnieuw opgehaald worden in kerstbomenpension in Oppuurs",
+        "topic": "Oppuurs",
+        "date": "2024-12-02T11:30:34Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/23-van-de-25-kerstbomen-kunnen-na-1-jaar-opnieuw-opgehaald-worde/"
+    },
+    {
+        "title": "Gent koopt ruim 70 woningen van projectontwikkelaar en verhuurt ze\nvoor lagere prijs\u00a0",
+        "topic": "Gent",
+        "date": "2024-12-02T11:19:38Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/budgethuur-gent-betaalbaar-wonen-investering-37-miljoen-rinkkaai/"
+    },
+    {
+        "title": "Vuilniswagenchauffeur krijgt 3 maanden cel met uitstel voor dodelijk ongeval in Waregem",
+        "topic": "Justitie",
+        "date": "2024-12-02T11:14:06Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/vonnis-dodelijk-ongeval-in-waregem-voetganger-vuilniswagen/"
+    },
+    {
+        "title": "Chinese tomaten uit dwangarbeid in 'Italiaanse' tomatenpuree, blijkt uit onderzoek van BBC",
+        "topic": "Verenigd Koninkrijk",
+        "date": "2024-12-02T11:11:00Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/bbc-onderzoek-chinese-tomaten-in-italiaanse-tomatenpuree/"
+    },
+    {
+        "title": "Kleine eilanden dagen vervuilende landen voor Internationaal Gerechtshof in 'grootste klimaatzaak ter wereld'",
+        "topic": "Buitenland",
+        "date": "2024-12-02T11:09:26Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/klimaatzaak-internationaal-gerechtshof-milieu-klimaat-schade-van/"
+    },
+    {
+        "title": "'Onleesbare' boodschappen uit 16e eeuw van gevangenen in Tower of London geven geheimen prijs",
+        "topic": "Verenigd Koninkrijk",
+        "date": "2024-12-02T10:55:11Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/16-eeuwse-boodschappen-van-gevangenen-in-tower-of-london-ontcijf/"
+    },
+    {
+        "title": "Limburgs AI-team van Chris Um\u00e9 levert special effects voor Hollywoodfilm 'Here' met Tom Hanks en Robin Wright: \"Enorm fier op ons werk\"",
+        "topic": "Films & Series",
+        "date": "2024-12-02T10:48:40Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/limburger-die-via-artificiele-intelligentie-acteurs-tom-hanks-en/"
+    },
+    {
+        "title": "Vlaams minister Demir laat sector dienstencheques doorlichten: \"1,6 miljard euro subsidies en nog niet rendabel\"",
+        "topic": "Economie",
+        "date": "2024-12-02T10:43:18Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/vlaams-minister-demir-laat-sector-dienstencheques-doorlichten/"
+    },
+    {
+        "title": "Twee mannen die in Antwerpen met ambulance gingen joyriden, krijgen 18 maanden cel",
+        "topic": "Antwerpen",
+        "date": "2024-12-02T10:30:00Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/jongemannen-die-in-antwerpen-met-ambulance-gingen-joyriden-moet/"
+    },
+    {
+        "title": "Brusselse PS verzet zich tegen Nederlandstalige meerderheid: \"Geen veto tegen N-VA, wel tegen supernota Van den Brandt\"",
+        "topic": "Brusselse verkiezingen",
+        "date": "2024-12-02T10:27:38Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/ps-brussel-n-va-regering-veto-de-ochtend/"
+    },
+    {
+        "title": "Minstens 56 doden in Guinee bij supportersgeweld en gedrang tijdens voetbalwedstrijd",
+        "topic": "Afrika",
+        "date": "2024-12-02T10:16:18Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/guinee-rellen-voetbalwedstrijd/"
+    },
+    {
+        "title": "Nederlanders veroordeeld tot 4 en 2 jaar cel voor verdrinking Hakim tijdens Gentse Feesten",
+        "topic": "Gent",
+        "date": "2024-12-02T09:24:04Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/gente-feesten-verdrinkingsdood-verdrinking-hakim-nederlandse-ver/"
+    },
+    {
+        "title": "Economische Inspectie start onderzoek naar projectontwikkelaar SeReCo: \"Kijken of er sprake kan zijn van agressieve handelspraktijken\"",
+        "topic": "WinWin",
+        "date": "2024-12-02T08:55:30Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/11/29/sereco-immo/"
+    },
+    {
+        "title": "Camera's registreerden ongeval Tom Waes, bloedstaal afgenomen voor onderzoek",
+        "topic": "Tom Waes",
+        "date": "2024-12-02T08:23:48Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/tom-waes-ongeval-bloedstaal-parket/"
+    },
+    {
+        "title": "Antwerpse stedelijke bibliotheken zetten deuren extra open voor studerende scholieren, met hulp van 'sfeerbeheerders'",
+        "topic": "Antwerpen (Stad)",
+        "date": "2024-12-02T08:06:57Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/11/30/stedelijke-bibliotheken-in-antwerpen-zetten-deuren-extra-lang-op/"
+    },
+    {
+        "title": "Personeel van Volkswagen gaat staken in 9 fabrieken tegen besparingen",
+        "topic": "Duitsland",
+        "date": "2024-12-02T08:02:36Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/personeel-van-volkswagen-gaat-staken-in-9-fabrieken/"
+    },
+    {
+        "title": "Zo beoordeelt Vlaams minister Crevits nieuwe regels bij lokale verkiezingen: \"Toch heel weinig problemen\"",
+        "topic": "Gemeenteraadsverkiezingen",
+        "date": "2024-12-02T07:58:53Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/zo-beoordeelt-vlaams-minister-crevits-nieuwe-regels-bij-lokale-v/"
+    },
+    {
+        "title": "Bewoner zwaargewond bij nachtelijke chaletbrand in Wuustwezel",
+        "topic": "Wuustwezel",
+        "date": "2024-12-02T07:58:00Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/bewoner-zwaargewond-bij-nachtelijke-chaletbrand-in-wuustwezel/"
+    },
+    {
+        "title": "Denderleeuw stopt na 50 jaar met carnaval",
+        "topic": "Denderleeuw",
+        "date": "2024-12-02T07:57:21Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/denderleeuw-stopt-na-50-jaar-met-carnaval/"
+    },
+    {
+        "title": "Hersenloos online scrollen: Engels woord van het jaar 'brain rot' doet nadenken over mediagebruik",
+        "topic": "Verenigd Koninkrijk",
+        "date": "2024-12-02T07:36:21Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/brain-rot-engelse-woord-van-het-jaar/"
+    },
+    {
+        "title": "Protest tegen Georgische regering houdt aan, premier sluit nieuwe verkiezingen uit ",
+        "topic": "Europa",
+        "date": "2024-12-02T07:07:00Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/protest-tegen-georgische-regering-houdt-aan-premier-sluit-nieuw/"
+    },
+    {
+        "title": "Waarom er nu maar beter snel een regering-De Wever komt",
+        "topic": null,
+        "date": "2024-12-02T07:02:32Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/waarom-nu-het-beste-maar-snel-een-nieuwe-regering-komt/"
+    },
+    {
+        "title": "Vlammen tegen eenzaamheid: dit zijn de 5 presentatoren van De Warmste Week 2024",
+        "topic": "De Warmste Week",
+        "date": "2024-12-02T06:47:35Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/presentatoren-artiesten-de-warmste-week/"
+    },
+    {
+        "title": "De Lijn start met vervangen van roltrappen premetrostation Schijnpoort in Antwerpen, station blijft wel open",
+        "topic": "Antwerpen (Stad)",
+        "date": "2024-12-02T06:00:10Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/11/30/de-lijn-start-met-vervangen-van-roltrappen-in-premetrostation-sc/"
+    },
+    {
+        "title": "Linkse partij van premier Ciolacu blijft grootste in Roemeni\u00eb, uiterst rechtse AUR tweede partij van het land",
+        "topic": "Europa",
+        "date": "2024-12-02T05:41:14Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/roemenie-parlementsverkiezingen/"
+    },
+    {
+        "title": "President Biden verleent toch gratie aan zoon Hunter: \"Hij werd geviseerd\"",
+        "topic": "Verenigde Staten",
+        "date": "2024-12-02T04:58:45Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/02/biden-verleent-zoon-hunter-gratie/"
+    },
+    {
+        "title": "Crisis in de auto-industrie: onmiddellijk ontslag voor CEO van Stellantis",
+        "topic": "Economie",
+        "date": "2024-12-01T22:16:00Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/crisis-in-europese-auto-industrie-onmiddellijk-ontslag-voor-ceo/"
+    },
+    {
+        "title": "Steven Van Herreweghe over zijn relatiebreuk: \"Accepteren dat het donker is, is soms het enige wat je kan doen\"",
+        "topic": "Media & Televisie",
+        "date": "2024-12-01T20:26:48Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/11/27/steven-van-herreweghe-de-columbus/"
+    },
+    {
+        "title": "Trump geeft ook functie aan schoonvader van andere dochter: Massad Boulos wordt raadgever Midden-Oosten",
+        "topic": "Amerika kiest",
+        "date": "2024-12-01T20:24:33Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/trump-geeft-ook-functie-aan-schoonvader-van-andere-dochter-mass/"
+    },
+    {
+        "title": "151 migranten gered uit zee voor kust van Calais",
+        "topic": "Frankrijk",
+        "date": "2024-12-01T19:49:20Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/honderdvijftig-migranten-gered-voor-kust-van-calais/"
+    },
+    {
+        "title": "Mister Gay Belgium deelt rode lintjes uit in Antwerpen voor wereldaidsdag: \"Cijfers stijgen al 3 jaar weer\"",
+        "topic": "Antwerpen (Stad)",
+        "date": "2024-12-01T18:40:06Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/mister-gay-belgium-deelt-5-000-rode-lintjes-uit-op-meir-in-antwe/"
+    },
+    {
+        "title": "Tom Waes dankt Bart Peeters in eerste Instagrambericht na zware crash: \u201cDanku lieve vriend xxx\u201d",
+        "topic": "Tom Waes",
+        "date": "2024-12-01T18:18:59Z",
+        "link": "https://www.vrt.be/vrtnws/nl/2024/12/01/tom-waes-dankt-bart-peeters-in-eerste-post-na-ongeval-danku-lie/"
     }
 ]

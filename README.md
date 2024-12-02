@@ -35,7 +35,7 @@ The program will automatically pull the breaking news titles, add the new titles
 - `streamlitapp.py` reads data from the database and creates bar charts showing
    - most recent 3 entries on selected topics under multiselectbox
    - the most frequent 10 topics of all the entries, from last week and last 24 hours under a selectbox
-   - the distribution of entries with 2-hour intervals througout the day 
+   - the distribution of entries the day and weekday
    - most frequent topic each week so far
 - wordcloud from article titles without stopwords (thanks to @genediazjr for the stopwords list)
 - Informs the user about the total number of entries, the date of the earliest entry in the database and latest update time of the chart using `pandas` and `matplotlib`
